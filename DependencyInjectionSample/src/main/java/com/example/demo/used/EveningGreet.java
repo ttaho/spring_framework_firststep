@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Greet 구현 클래스
  * 저녁 인사 하기
  */
-@Component
+//@Component
 public class EveningGreet implements Greet {
     @Override
     public void greeting() {
