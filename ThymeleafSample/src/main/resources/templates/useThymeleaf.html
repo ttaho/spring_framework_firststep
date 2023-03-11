@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Sample</title>
+</head>
+<body>
+<!--01: 직접 문자를 삽입-->
+<h1 th:text="'hello world'">표시하는 부분</h1>
+<!--02: 인라인 처리-->
+<h1>안녕하세요 ! [[${name}]]씨</h1>
+<!--03: 값 결합-->
+<h1 th:text="'오늘의 날씨는 ' + '맑음 ' + '입니다.'">표시하는 부분</h1>
+<hr>
+<!--04: 값 결합(리터럴 치환)-->
+<h1 th:text="|안녕하세요 ${name}씨|"></h1>
+<th:block th:each="member : ${members}">
+    <span th:text="|멤버 id : ${member.id}, 멤버 이름 : ${member.name}|"></span><br>
+</th:block>
+<!--05: 지역 변수-->
+<div th:with="a=1,b=2">
+    <span th:text="|${a} + ${b} = ${a+b}|"></span>
+</div>
+<!--06:비교와 등가-->
+<span th:text="1 > 10"></span>
+<span th:text="1 < 10"></span>
+<span th:text="1 >= 10"></span>
+<span th:text="1 >= 10"></span>
+<span th:text="1 == 10"></span>
+<span th:text="1 != 10"></span>
+</body>
+</html>
